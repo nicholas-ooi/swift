@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-cloud"></i><b>&nbsp;GovProp</b></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-bookmark-o"></i> Bookmarks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-envelope-o"></i> Contacts</a>
+            </li>
+          </ul>
+          <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
+        </div>
+      </div>
+    </nav>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-primary pt-2">Latest Statistic of 2017 for Blk 311D, Compassvale Street</h1>
+            <h4 class="pt-4 text-secondary">Price changes over the months</h4>
+
+            <svg class="chart" width="100%" height="300"></svg>
+
+          </div>
+        </div>
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <h4 class="pt-4 text-secondary">Property market valuation over the past 5 years</h4>
+
+              <div id="linegraph" style="width:100%;height:250px"></div>
+
+            </div>
+            <div class="col-md-6">
+              <h4 class="pt-4 text-secondary">Wisdoms of the crowd over the past 5 years</h4>
+              <div id="myDiv">
+              </div>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="py-5 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 col-md-6 align-self-center">
+            <a href="https://www.facebook.com" target="_blank"></a>
+          </div>
+          <div class="col-4 col-md-6 align-self-center">
+            <a href="https://www.instagram.com" target="_blank"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mt-3 text-center">
+            <p>© Copyright 2017 Pingendo - All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+      var margin = {top: 20, right: 20, bottom: 70, left: 40}
+
+      var svg = d3.select(".chart")
+      .attr("width", "100%")
+      .attr("height", 300)
+      .append("g")
+      .attr("transform",
+      "translate(" + margin.left + "," + margin.top + ")");
+
+      var width = 1100 - margin.left - margin.right,
+      height = 300 - margin.top - margin.bottom;
+
+
+      // set the ranges
+
+      var timer =0
+
+      var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+
+      var y = d3.scale.linear().range([height, 0]);
+
+      // define the axis
+      var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom")
+
+      var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .ticks(10);
+
+      var monthNames = [ "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December" ];
+
+      var data = []
+      monthNames.map(function(m){
+        data.push({"month":m,"pricePoint":Math.max(500,Math.floor(Math.random() * 600) + 30) })
+      })
+
+      data.forEach(function(d) {
+        d.month = d.month;
+        d.pricePoint = +d.pricePoint;
+      });
+
+
+      x.domain(data.map(function(d) { return d.month; }));
+      y.domain([0, d3.max(data, function(d) { return d.pricePoint; })]);
+
+      svg.selectAll("*").remove();
+
+      svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "1.5em")
+      .attr("dy", "1em")
+      .attr("transform", "rotate(0)" );
+
+      svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+      .append("text")
+      .attr("transform", "rotate(0)")
+      .attr("y", -20)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Price");
+
+      svg.selectAll("bar")
+      .data(data)
+      .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.month); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.pricePoint); })
+      .attr("height", function(d) { return height - y(d.pricePoint); });
+
+
+      getLineG()
+      getAdLine()
+      function getLineG()
+      {
+        var t = document.getElementById("linegraph")
+        Plotly.plot(t, [{
+          x: [2012, 2013, 2014, 2015, 2016,2017],
+          y: [350,400,430,460,490,550] }], {
+            margin: { t: 0 } } );
+          }
+
+
+          function getAdLine()
+          {
+            var xData = [
+              [2012, 2013, 2014, 2015, 2016,2017],
+              [2012, 2013, 2014, 2015, 2016,2017],
+              [2012, 2013, 2014, 2015, 2016,2017],
+              [2012, 2013, 2014, 2015, 2016,2017]
+            ];
+
+            var yData = [
+              [40, 52, 60, 65, 66, 80],
+              [60, 32, 60, 26, 30, 40],
+              [13, 14, 20, 24, 40, 95],
+              [18, 21, 18, 22, 25, 40]
+            ];
+
+            var colors = ['rgba(67,67,67,1)', 'rgba(115,115,115,1)', 'rgba(49,130,189, 1)',
+            'rgba(189,189,189,1)'
+          ];
+
+          var lineSize = [2, 2, 4, 2];
+
+          var labels = ['Growth', 'Favorites', 'Views', 'Hype'];
+
+          var data = [];
+
+          for ( var i = 0 ; i < xData.length ; i++ ) {
+            var result = {
+              x: xData[i],
+              y: yData[i],
+              type: 'scatter',
+              mode: 'lines',
+              line: {
+                color: colors[i],
+                width: lineSize[i]
+              }
+            };
+            var result2 = {
+              x: [xData[i][0], xData[i][11]],
+              y: [yData[i][0], yData[i][11]],
+              type: 'scatter',
+              mode: 'markers',
+              marker: {
+                color: colors[i],
+                size: 12
+              }
+            };
+            data.push(result, result2);
+          }
+
+          var layout = {
+            showlegend: false,
+            height: 600,
+            width: 600,
+            xaxis: {
+              showline: true,
+              showgrid: false,
+              showticklabels: true,
+              linecolor: 'rgb(204,204,204)',
+              linewidth: 2,
+              autotick: false,
+              ticks: 'outside',
+              tickcolor: 'rgb(204,204,204)',
+              tickwidth: 2,
+              ticklen: 5,
+              tickfont: {
+                family: 'Arial',
+                size: 12,
+                color: 'rgb(82, 82, 82)'
+              }
+            },
+            yaxis: {
+              showgrid: false,
+              zeroline: false,
+              showline: false,
+              showticklabels: false
+            },
+            autosize: false,
+            margin: {
+              autoexpand: false,
+              l: 100,
+              r: 20,
+              t: 0
+            },
+            annotations: [
+              {
+                xref: 'paper',
+                yref: 'paper',
+                x: 0.0,
+                y: 0,
+                xanchor: 'left',
+                yanchor: 'bottom',
+                text: '',
+                font:{
+                  family: 'Arial',
+                  size: 30,
+                  color: 'rgb(37,37,37)'
+                },
+                showarrow: false
+              },
+              {
+                xref: 'paper',
+                yref: 'paper',
+                x: 0.5,
+                y: -0.1,
+                xanchor: 'center',
+                yanchor: 'top',
+                text: 'Source: MAS Housing Data Analytics',
+                showarrow: false,
+                font: {
+                  family: 'Arial',
+                  size: 12,
+                  color: 'rgb(150,150,150)'
+                }
+              }
+            ]
+          };
+
+          for( var i = 0 ; i < xData.length ; i++ ) {
+            var result = {
+              xref: 'paper',
+              x: 0.05,
+              y: yData[i][0],
+              xanchor: 'right',
+              yanchor: 'middle',
+              text: labels[i] + ' ' + yData[i][0] +'%',
+              showarrow: false,
+              font: {
+                family: 'Arial',
+                size: 16,
+                color: 'black'
+              }
+            };
+            var result2 = {
+              xref: 'paper',
+              x: 0.95,
+              y: yData[i][11],
+              xanchor: 'left',
+              yanchor: 'middle',
+              text: yData[i][11] +'%',
+              font: {
+                family: 'Arial',
+                size: 16,
+                color: 'black'
+              },
+              showarrow: false
+            };
+
+            layout.annotations.push(result, result2);
+          }
+
+          Plotly.newPlot('myDiv', data, layout);
+        }
+
+      })
+      </script>
+    </body>
+
+    </html>
