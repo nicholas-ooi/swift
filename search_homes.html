@@ -8,6 +8,16 @@
   <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
 
 <body>
+  <script type="text/javascript">
+    function redirect(){
+     
+      if(document.getElementById("inputboxy").checked == true){
+      	location.href = "singpass_login.html";
+        //document.getElementById("demo").innerHTML = "Hello World";
+      }
+     	 
+     }
+  </script>
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-users"></i><b>&nbsp;GovProp</b></a>
@@ -37,84 +47,278 @@
         <div class="col-md-12" id="book">
           <div class="card">
             <div class="card-body p-8">
-              <form id="c_form-h" class="pi-draggable" method="post" action="https://formspree.io/">
+              <form id="c_form-h" class="pi-draggable" method="post">
                 <div class="form-group"> <label>Keyword</label>
                   <input type="text" name="" class="form-control" placeholder=""> </div>
-                <div class="form-group"> <label>Region</label>
-                  <input type="text" name="" class="form-control" placeholder=""> </div>
+                <div class="form-group"> <label>Region: </label> <select class="btn btn-outline-primary dropdown-toggle" data-style="btn btn-outline-primary dropdown-toggle">
+ 									<option value="NS1 | Jurong East">NS1 | Jurong East</option>
+                    <option value="NS2 | Bukit Batok">NS2 | Bukit Batok</option>
+                    <option value="NS1 | Jurong East">NS3 | Bukit Gombak</option>
+                    <option value="NS2 | Bukit Batok">NS4 | Choa Chu Kang</option>
+                    <option value="NS1 | Jurong East">NS5 | Yew Tee</option>
+                    <option value="NS2 | Bukit Batok">NS6 | Kranji</option>
+                    <option value="NS1 | Jurong East">NS7 | Marsiling</option>
+                    <option value="NS2 | Bukit Batok">NS9 | Woodlands</option>
+                     <option value="NS2 | Bukit Batok">NS10 | Admiralty </option>
+                                        
+									</select>
+                  <!-- <div id="c_btn-dropdown-outline" class="btn-group pi-draggable" draggable="true">
+                    <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> NS1 | Jurong East </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">NS2 | Bukit Batok </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">NS3 | Bukit Gombak</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">NS4 | Choa Chu Kang</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">NS5 | Yew Tee </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">NS6 | Kranji</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">NS7 | Marsiling </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">NS9 | Woodlands</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">NS10 | Admiralty </a>
+                    </div>
+                  </div>--></div>
                 <div class="form-group"> <label>Price Range</label>
                   <div class="row">
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder=""> </div>
+                    <div class="col-2">
+                      <div class="btn-group"> <select class="btn btn-outline-primary dropdown-toggle" data-style="btn btn-outline-primary dropdown-toggle">
+ 									<option value="NS1 | Jurong East">Any</option>
+                    <option value="NS2 | Bukit Batok">$200,000</option>
+                    <option value="NS1 | Jurong East">$300,000</option>
+                    <option value="NS2 | Bukit Batok">$400,000</option>
+                    <option value="NS1 | Jurong East">$500,000</option>
+                    <option value="NS2 | Bukit Batok">$600,000</option>
+                    <option value="NS1 | Jurong East">$700,000</option>
+                    <option value="NS2 | Bukit Batok">$800,000</option>
+                     <option value="NS2 | Bukit Batok">$900,000</option>
+                      <option value="NS2 | Bukit Batok">$1,000,000</option>                  
+									</select>
+                        <!--<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Start Price </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Any</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$200,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$300,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$400,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$500,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$600,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$700,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$800,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$900,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$1,000,000</a>
+                        </div>-->
+                      </div>
+                    </div>
                     <div class="col-1"> to </div>
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder=""> </div>
+                    <div class="col-2">
+                      <div class="btn-group"> <select class="btn btn-outline-primary dropdown-toggle" data-style="btn btn-outline-primary dropdown-toggle">
+ 									<option value="NS1 | Jurong East">Any</option>
+                    <option value="NS2 | Bukit Batok">$200,000</option>
+                    <option value="NS1 | Jurong East">$300,000</option>
+                    <option value="NS2 | Bukit Batok">$400,000</option>
+                    <option value="NS1 | Jurong East">$500,000</option>
+                    <option value="NS2 | Bukit Batok">$600,000</option>
+                    <option value="NS1 | Jurong East">$700,000</option>
+                    <option value="NS2 | Bukit Batok">$800,000</option>
+                     <option value="NS2 | Bukit Batok">$900,000</option>
+                      <option value="NS2 | Bukit Batok">$1,000,000</option>                  
+									</select>
+                        <!--<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> End Price </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Any</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$200,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$300,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$400,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$500,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$600,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$700,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$800,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$900,000</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">$1,000,000</a>
+                        </div>-->
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group"> <label>Unit Level</label>
                   <div class="row">
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder=""> </div>
+                    <div class="col-2"> <select class="btn btn-outline-primary dropdown-toggle" data-style="btn btn-outline-primary dropdown-toggle">
+ 									<option value="NS1 | Jurong East">Any</option>
+                    <option value="NS2 | Bukit Batok">1</option>
+                    <option value="NS1 | Jurong East">2</option>
+                    <option value="NS2 | Bukit Batok">3</option>
+                    <option value="NS1 | Jurong East">4</option>
+                    <option value="NS2 | Bukit Batok">5</option>
+                    <option value="NS1 | Jurong East">6</option>
+                    <option value="NS2 | Bukit Batok">7</option>
+                     <option value="NS2 | Bukit Batok">8</option>
+                      <option value="NS2 | Bukit Batok">9</option>
+                     <option value="NS2 | Bukit Batok">10</option>
+                     <option value="NS2 | Bukit Batok">11</option>
+                    <option value="NS1 | Jurong East">12</option>
+                    <option value="NS2 | Bukit Batok">13</option>
+                    <option value="NS1 | Jurong East">14</option>
+                    <option value="NS2 | Bukit Batok">15</option>
+                    <option value="NS1 | Jurong East">16</option>
+                    <option value="NS2 | Bukit Batok">17</option>
+                     <option value="NS2 | Bukit Batok">18</option>
+                      <option value="NS2 | Bukit Batok">19</option>    
+                    <option value="NS1 | Jurong East">20</option>
+                     <option value="NS2 | Bukit Batok">21</option>
+                    <option value="NS1 | Jurong East">22</option>
+                    <option value="NS2 | Bukit Batok">23</option>
+                    <option value="NS1 | Jurong East">24</option>
+                    <option value="NS2 | Bukit Batok">25</option>
+                    <option value="NS1 | Jurong East">26</option>
+                    <option value="NS2 | Bukit Batok">27</option>
+                     <option value="NS2 | Bukit Batok">28</option>
+                      <option value="NS2 | Bukit Batok">29</option>    
+                    <option value="NS2 | Bukit Batok">30</option>
+                     
+									</select> </div>
                     <div class="col-1"> to </div>
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder=""> </div>
+                    <div class="col-2"> <select class="btn btn-outline-primary dropdown-toggle" data-style="btn btn-outline-primary dropdown-toggle">
+ 									<option value="NS1 | Jurong East">Any</option>
+                    <option value="NS2 | Bukit Batok">1</option>
+                    <option value="NS1 | Jurong East">2</option>
+                    <option value="NS2 | Bukit Batok">3</option>
+                    <option value="NS1 | Jurong East">4</option>
+                    <option value="NS2 | Bukit Batok">5</option>
+                    <option value="NS1 | Jurong East">6</option>
+                    <option value="NS2 | Bukit Batok">7</option>
+                     <option value="NS2 | Bukit Batok">8</option>
+                      <option value="NS2 | Bukit Batok">9</option>
+                     <option value="NS2 | Bukit Batok">10</option>
+                     <option value="NS2 | Bukit Batok">11</option>
+                    <option value="NS1 | Jurong East">12</option>
+                    <option value="NS2 | Bukit Batok">13</option>
+                    <option value="NS1 | Jurong East">14</option>
+                    <option value="NS2 | Bukit Batok">15</option>
+                    <option value="NS1 | Jurong East">16</option>
+                    <option value="NS2 | Bukit Batok">17</option>
+                     <option value="NS2 | Bukit Batok">18</option>
+                      <option value="NS2 | Bukit Batok">19</option>    
+                    <option value="NS1 | Jurong East">20</option>
+                     <option value="NS2 | Bukit Batok">21</option>
+                    <option value="NS1 | Jurong East">22</option>
+                    <option value="NS2 | Bukit Batok">23</option>
+                    <option value="NS1 | Jurong East">24</option>
+                    <option value="NS2 | Bukit Batok">25</option>
+                    <option value="NS1 | Jurong East">26</option>
+                    <option value="NS2 | Bukit Batok">27</option>
+                     <option value="NS2 | Bukit Batok">28</option>
+                      <option value="NS2 | Bukit Batok">29</option>    
+                    <option value="NS2 | Bukit Batok">30</option>
+                     
+									</select> </div>
                   </div>
                 </div>
                 <div class="form-group"> <label>Unit Size</label>
                   <div class="row">
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder=""> </div>
+                    <div class="col-2"> <select class="btn btn-outline-primary dropdown-toggle" data-style="btn btn-outline-primary dropdown-toggle">
+ 									<option value="NS1 | Jurong East">Any</option>
+                    <option value="NS2 | Bukit Batok">40</option>
+                    <option value="NS1 | Jurong East">80</option>
+                    <option value="NS2 | Bukit Batok">110</option>
+                    <option value="NS1 | Jurong East">180</option>
+                    <option value="NS2 | Bukit Batok">200</option>
+                    <option value="NS1 | Jurong East">&gt;210</option>
+ 
+									</select></div>
                     <div class="col-1"> to </div>
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder=""> </div>
+                    <div class="col-2"> <select class="btn btn-outline-primary dropdown-toggle" data-style="btn btn-outline-primary dropdown-toggle">
+ 									<option value="NS1 | Jurong East">Any</option>
+                    <option value="NS2 | Bukit Batok">40</option>
+                    <option value="NS1 | Jurong East">80</option>
+                    <option value="NS2 | Bukit Batok">110</option>
+                    <option value="NS1 | Jurong East">180</option>
+                    <option value="NS2 | Bukit Batok">200</option>
+                    <option value="NS1 | Jurong East">&gt;210</option>
+ 
+									</select> </div>
                   </div>
-                </div> <label>Housing Type</label>
+                </div> <label><h5>
+                Housing Type
+                </h5></label>
                 <br>
-                <div class="form-group"> <label>HDB : </label>
+                <div class="form-group"> <label><b>HDB : </b></label>
                   <div class="form-check form-check-inline"> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 2-R Flexi
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 2-R Flexi &nbsp; &nbsp;
+                    </label> <label class="form-check-label"> 
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 3-R &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 3-R
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 4-R &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 4-R
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 5-R &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 5-R
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Executive &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Executive
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 3-Gen &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> 3-Gen
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Jumbo &nbsp; &nbsp;
+                    </label> <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Adjoined flat &nbsp; &nbsp;
+                    </label> <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> EA/EM &nbsp; &nbsp;
+                    </label> <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Maisonette &nbsp; &nbsp;
                     </label> </div>
                 </div>
-                <div class="form-group"> <label>Condo : </label>
+                <div class="form-group"> <label><b>Condo : </b></label>
                   <div class="form-check form-check-inline"> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Condominium
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Condominium &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Executive Condominuim
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Executive Condominuim &nbsp; &nbsp;
+                    </label> <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Apartment &nbsp; &nbsp;
+                    </label> <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Walk-up &nbsp; &nbsp;
+                    </label> <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Cluster house &nbsp; &nbsp;
                     </label> </div>
                 </div>
-                <div class="form-group"> <label>Landed : </label>
+                <div class="form-group"> <label><b>Landed : </b></label>
                   <div class="form-check form-check-inline"> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Terrce
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Terrace &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Detached
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Detached &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Semi-Detached
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Semi-Detached &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Bungalow
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Bungalow &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Good Class
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Good Class &nbsp; &nbsp;
                     </label> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Shophouse
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Shophouse &nbsp; &nbsp;
                     </label> </div>
                 </div>
+                <br> </form>
+              <form>
+                <input type="checkbox" id="inputboxy" value="on"> Select based on my Eligibility (Require Login)
                 <br>
-                <div class="form-group">
-                  <div class="form-check form-check-inline"> <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option"> Select based on my Eligibility (Require Login)
-                  </label></div>
-                </div>
-                <button type="submit" class="btn btn-primary">Search</button>
-              </form>
+                <br>
+                <input type="button" onclick="redirect()" value="Search" class="btn btn-primary" id="myButton"> </form>
             </div>
           </div>
         </div>
