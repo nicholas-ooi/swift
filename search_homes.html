@@ -20,7 +20,7 @@
   </script>
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-users"></i><b>&nbsp;GovProp</b></a>
+      <a class="navbar-brand" href="main.html"><i class="fa d-inline fa-lg fa-users"></i><b>&nbsp;GovProp</b></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
         aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
@@ -32,11 +32,17 @@
             <a class="nav-link" href="../swift/house_compare.html"><i class="fa d-inline fa-lg fa-shopping-cart"></i> Compare </a>
           </li>
         </ul>
-        <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
+        <div class="btn-group bg-secondary">
+          <button class="btn dropdown-toggle btn-secondary" data-toggle="dropdown"><i class="fa d-inline fa-lg fa-user-circle-o"></i>&nbsp;User&nbsp;</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="main.html">Sign Out</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
-  <div class="py-5" style="background-image: url(&quot;https://pingendo.github.io/templates/sections/assets/form_red.jpg&quot;);">
+  <div class="py-5" style="background-image: url(&quot;images/20170407_192420.jpg&quot;);">
     <div class="container">
       <div class="row">
         <div class="align-self-center col-md-8 text-white">
@@ -318,7 +324,9 @@
                 <input type="checkbox" id="inputboxy" value="on"> Select based on my Eligibility (Require Login)
                 <br>
                 <br>
-                <input type="button" onclick="redirect()" value="Search" class="btn btn-primary" id="myButton"> </form>
+                <!--<input type="button" onclick="redirect()" value="Search" class="btn btn-primary" id="myButton">-->
+              </form>
+              <a class="btn btn-primary" href="home_listings.html">Search</a>
             </div>
           </div>
         </div>
