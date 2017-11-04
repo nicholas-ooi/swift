@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
+
+  <style type="text/css">
+
+
+  #chatborder {
+    height: 350px;
+    width: 230px;
+    overflow: auto;
+    border: 1px solid #aaa;
+    background-color: #f6f9f6;
+    margin:0px;
+    padding: 0px;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    margin-right: 10px;
+
+  }
+
+  #chatborder input
+  {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .chatlogger
+  {
+    padding: 5px;
+    color:#333;
+  }
+
+  .chatlog
+  {
+    font-size: 12px;
+  }
+
+  .footerClass
+  {
+
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 153px;
+
+  }
+
+  .smallbox
+  {
+    padding-top: 0 !important;
+  }
+
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-cloud"></i><b>&nbsp;GovProp</b></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-bookmark-o"></i> Bookmarks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-envelope-o"></i> Contacts</a>
+            </li>
+          </ul>
+          <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
+        </div>
+      </div>
+    </nav>
+    <div class="py-5 smallbox">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <img class="img-fluid d-block mb-4 w-100 img-thumbnail" src="https://pingendo.github.io/templates/sections/assets/gallery_3.jpg"> </div>
+          <div class="col-md-7">
+            <h2 class="text-primary pt-3">Blk 311D, Compassvale Street</h2>
+            <h3 class="pt-3 text-secondary">$438,000</h3>
+            <h4 class="pt-3">Details</h4>
+            <p class=""> Super High Floor and Renovated Balance Lease 93 years
+              <br> - 112 sqm / 1206 sqft
+              <br> - 3 Bedrooms + Study + Yard + Balcony
+              <br> - 5yr Renovation and very well kept
+              <br> - Basement Carpark
+              <br> - 2mins to 24hrs Giant
+              <br> - 2mins to Wet Market, hawker centre
+              <br> - 8mins to AMK MRT, bus interchange, AMK hub
+              <br> - Main Door (NE), Living Room (SE), Kitchen (NW)
+              <br> - Wide Frontage Layout
+              <br> - Amenities downstairs (coffeeshop, cafes) </p>
+            <h4 class="pt-3">Eligibility</h4>
+            <p class=""> Chinese, Malay, Indian </p>
+            <h4 class="pt-3">Highlight</h4>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5 bg-dark text-white footerClass">
+      <div class="container">
+
+        <!-- Chatbot code  -->
+        <div id='chatborder'>
+          <div class="chatlogger">
+          <p id="chatlog8" class="chatlog">&nbsp;</p>
+          <p id="chatlog7" class="chatlog">&nbsp;</p>
+          <p id="chatlog6" class="chatlog">&nbsp;</p>
+          <p id="chatlog5" class="chatlog">&nbsp;</p>
+          <p id="chatlog4" class="chatlog">&nbsp;</p>
+          <p id="chatlog3" class="chatlog">&nbsp;</p>
+          <p id="chatlog2" class="chatlog">&nbsp;</p>
+          <p id="chatlog1" class="chatlog">&nbsp;</p>
+        </div>
+          <input type="text" name="chat" id="chatbox" placeholder="Hi there! Type here to talk to me." onfocus="placeHolder()">
+        </div>
+        <!-- Chatbot code  -->
+
+        <div class="row">
+          <div class="col-4 col-md-6 align-self-center">
+            <a href="https://www.facebook.com" target="_blank"></a>
+          </div>
+          <div class="col-4 col-md-6 align-self-center">
+            <a href="https://www.instagram.com" target="_blank"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mt-3 text-center">
+            <p>© Copyright 2017 Pingendo - All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+      nlp = window.nlp_compromise;
+
+      var messages = [], //array that hold the record of each string in chat
+        lastUserMessage = "", //keeps track of the most recent input string from the user
+        botMessage = "", //var keeps track of what the chatbot is going to say
+        botName = 'Swift Helpdesk', //name of the chatbot
+        talking = true; //when false the speach function doesn't work
+
+
+      function chatbotResponse() {
+        talking = true;
+        botMessage = "I do not seem to understand"; //the default message
+
+        if (lastUserMessage === 'hi' || lastUserMessage =='hello') {
+          const hi = ['hi','howdy','hello']
+          botMessage = hi[Math.floor(Math.random()*(hi.length))];
+        }
+
+        if (lastUserMessage === 'name') {
+          botMessage = 'My name is ' + botName;
+        }
+
+        if(lastUserMessage === "my houses")
+        {
+          botMessage = "These are your houses:<br />"+
+           "Blk 311D, Compassvale Street<br />"
+        }
+
+
+      }
+
+      function newEntry() {
+        //if the message from the user isn't empty then run
+        if (document.getElementById("chatbox").value != "") {
+          //pulls the value from the chatbox ands sets it to lastUserMessage
+          lastUserMessage = document.getElementById("chatbox").value;
+          //sets the chat box to be clear
+          document.getElementById("chatbox").value = "";
+          //adds the value of the chatbox to the array messages
+          messages.push(lastUserMessage);
+          //Speech(lastUserMessage);  //says what the user typed outloud
+          //sets the variable botMessage in response to lastUserMessage
+          chatbotResponse();
+          //add the chatbot's name and message to the array messages
+          messages.push("<b>" + botName + ":</b> " + botMessage);
+          // says the message using the text to speech function written below
+          Speech(botMessage);
+          //outputs the last few array elements of messages to html
+          for (var i = 1; i < 8; i++) {
+            if (messages[messages.length - i])
+              document.getElementById("chatlog" + i).innerHTML = messages[messages.length - i];
+          }
+        }
+      }
+
+      //text to Speech
+      //https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API
+      function Speech(say) {
+        if ('speechSynthesis' in window && talking) {
+          var utterance = new SpeechSynthesisUtterance(say);
+          //msg.voice = voices[10]; // Note: some voices don't support altering params
+          //msg.voiceURI = 'native';
+          //utterance.volume = 1; // 0 to 1
+          //utterance.rate = 0.1; // 0.1 to 10
+          //utterance.pitch = 1; //0 to 2
+          //utterance.text = 'Hello World';
+          //utterance.lang = 'en-US';
+          speechSynthesis.speak(utterance);
+        }
+      }
+
+      //runs the keypress() function when a key is pressed
+      document.onkeypress = keyPress;
+      //if the key pressed is 'enter' runs the function newEntry()
+      function keyPress(e) {
+        var x = e || window.event;
+        var key = (x.keyCode || x.which);
+        if (key == 13 || key == 3) {
+          //runs this function when enter is pressed
+          newEntry();
+        }
+        if (key == 38) {
+          console.log('hi')
+            //document.getElementById("chatbox").value = lastUserMessage;
+        }
+      }
+
+
+    })
+
+    //clears the placeholder text ion the chatbox
+    //this function is set to run when the users brings focus to the chatbox, by clicking on it
+    function placeHolder() {
+      document.getElementById("chatbox").placeholder = "";
+    }
+
+      </script>
+    </body>
+
+    </html>
