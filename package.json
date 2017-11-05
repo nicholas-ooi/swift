@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nicholas-ooi/swift#readme",
   "dependencies": {
+    "d3": "^4.11.0",
     "jquery": "^3.2.1"
   }
 }
